@@ -26,7 +26,7 @@ router.get('/', PostControllers.getAllPost);
 router.get('/:id', PostControllers.getPost);
 
 
-router.patch('/:id', 
+router.put('/:id', 
   // multerUpload.fields([{ name: 'postImages' }]),
   // auth('ADMIN',"USER"),
   PostControllers.updatePost);

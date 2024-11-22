@@ -46,7 +46,7 @@ const getAllPostFromDB = async (query: Record<string, unknown>) => {
 
 
 const getPostFromDB = async (postId: string) => {
-  const result = await Post.findById(postId).populate('user');
+  const result = await Post.findById(postId);
   return result;
 };
 
@@ -58,11 +58,7 @@ const updatePost = async (id: string, payload: Partial<TPost>) => {
 
 const deletePostFromDB = async (itemId: string) => {
   const result = await Post.findByIdAndDelete(itemId);
-  // const deletedItemId = result?._id;
-  // if (deletedItemId) {
-  //   await deleteDocumentFromIndex('items', deletedItemId.toString());
-  // }
-  return result;
+   return result;
 };
 
 
